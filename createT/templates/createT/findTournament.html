@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'createT/style.css' %}">
+    <meta charset="utf-8">
+    <title>Turnois</title>
+  </head>
+  <body>
+
+    <!-NAVBAR START-!>
+
+    {% include "createT/navbar.html" %}
+
+    <!-NAVBAR START-!>
+
+    <h1>Tournaments: {{tournaments.count}} </h1>
+    <br>
+
+    <!- FilterBar Search Start -!>
+
+      <div class="col">
+        <div class="card card-body">
+
+          <div class="container">
+
+
+  <form class="form-inline" action="" method="GET">
+
+    {{ myFiliter.form.PrizeL.errors }}
+    <label for="{{ myFilter.form.PrizeL.id_for_label }}">Prize:</label>
+    {{ myFilter.form.PrizeG }}{{ myFilter.form.PrizeL }}
+
+    {{ myFiliter.form.Tournament_Type.errors }}
+      <label for="{{ myFilter.form.Tournament_Type.id_for_label }}">Category: </label>
+    {{ myFilter.form.Tournament_Type }}
+
+    {{ myFiliter.form.PpT.errors }}
+    <label for="{{ myFilter.form.PpT.id_for_label }}">Person Per Team:</label>
+    {{ myFilter.form.PpT}}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    <!- FilterBar Search End -!>
+    <br>
+
+    <!- findTournaments start -!>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Tournament</th>
+            <th scope="col">Winning Prize</th>
+            <th scope="col">Type</th>
+            <th scope="col">Person Per Team</th>
+            <th scope="col"><i class="fa fa-bolt"></i></th>
+            <th scope="col"><i class="fa fa-info"></i></th>
+          </tr>
+        </thead>
+
+        {% for i in tournaments %}
+        <tr>
+          <td>{{i.name}}</td>
+          <td>{{i.Prize}}</td>
+          <td>{{i.Tournament_Type}}</td>
+          <td>{{i.PpT}}</td>
+          <td><a href="{% url 'tournamentSubmit' i.id %}">Submit</a></td>
+          <td><a href="{% url 'tournamentInfo' i.id %}">Extra Info</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+
+
+  </body>
+
+
+</html>

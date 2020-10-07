@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'createT/style.css' %}">
+    <meta charset="utf-8">
+    <title>Turnois</title>
+  </head>
+  <body>
+
+    <!-NAVBAR START-!>
+
+      {% include "createT/navbar.html" %}
+
+    <!-NAVBAR START-!>
+
+
+      <div class="text-center">
+        <img src="/static/createT/images/duck.png">
+      </div>
+
+
+      <div class="container">
+        
+      </div>
+
+<!--  <h1>Hello, World!   {{request.user.username}} ---  {{request.user.id}} ----- {{currentUser.id}}</h1>
+    <p>URL of this page: {{ request.get_full_path }}</p>
+
+    {%if user.is_authenticated%}
+      <h1>IME LOGIN<h1>
+      {% else %}
+      <h1>EN IME LOGIN<h1>
+    {%endif%}
+
+    {%if userType == 0 %}
+      <h1>IME Simmetexon<h1>
+    {%elif userType == 1 %}
+      <h1>IME Diorganotis<h1>
+      {% else %}
+      <h1>Nothing<h1>
+    {%endif%} --!>
+
+
+
+
+  </body>
+
+
+</html>

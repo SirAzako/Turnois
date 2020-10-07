@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'createT/style.css' %}">
+    <meta charset="utf-8">
+    <title>Turnois</title>
+  </head>
+  <body>
+
+    <!-NAVBAR START-!>
+
+      {% include "createT/navbar.html" %}
+
+    <!-NAVBAR START-!>
+    <h1>Tournament: {{tournaments.name}}</h1>
+    <h1>Winning Prize: {{tournaments.Prize}}</h1>
+    <h1>Category: {{tournaments.Tournament_Type}}</h1>
+    <h1>Start Date: {{tournaments.date_start}}</h1>
+    <h1>End Date: {{tournaments.date_end}}</h1>
+    <h1>Location: {{tournaments.location}}</h1>
+    <h1>Registration Price Per Person: {{tournaments.regPrice}}</h1>
+    <h1>Person Per Team: {{tournaments.PpT}}</h1>
+
+
+  </body>
+
+
+</html>

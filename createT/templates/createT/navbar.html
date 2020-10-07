@@ -1,0 +1,45 @@
+{% load static %}
+<div class="navbar2">
+  <ul>
+    {% if request.get_full_path == '/index/' %}
+      <li><a class="active" href="{% url 'index' %}">Home</a></li>
+    {% else %}
+      <li><a href="{% url 'index' %}">Home</a></li>
+    {%endif%}
+
+  {% if user.userType == 0 %}
+    {% if request.get_full_path == '/findTournament/' %}
+    <li><a class="active" href="{% url 'findTournament' %}">Find a Tournament</a></li>
+    {%else%}
+    <li><a href="{% url 'findTournament' %}">Find a Tournament</a></li>
+    {%endif%}
+  {%endif%}
+
+    {% if user.userType == 1 %}
+      {% if request.get_full_path == '/createTournament/' %}
+      <li><a class="active" href="{% url 'createTournament'%}">Create a Tournament</a></li>
+      {%else%}
+      <li><a href="{% url 'createTournament'%}">Create a Tournament</a></li>
+      {%endif%}
+    {%endif%}
+
+    {%if user.is_authenticated%}
+      <li style="float:right"><a href="{% url 'logout' %}">Sign out</a></li>
+    {% else %}
+
+      {% if request.get_full_path == '/register/' %}
+        <li style="float:right"><a class="active" href="{% url 'register' %}">Sign up</a></li>
+      {%else%}
+        <li style="float:right"><a href="{% url 'register' %}">Sign up</a></li>
+      {%endif%}
+
+      {% if request.get_full_path == '/login/' %}
+      <li style="float:right"><a class="active" href="{% url 'login' %}">Sign in</a></li>
+      {%else%}
+      <li style="float:right"><a href="{% url 'login' %}">Sign in</a></li>
+      {%endif%}
+
+    {% endif %}
+  </ul>
+
+</div>
