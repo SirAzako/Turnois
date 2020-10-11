@@ -14,14 +14,39 @@
       {% include "createT/navbar.html" %}
 
     <!-NAVBAR START-!>
-    <h1>Tournament: {{tournaments.name}}</h1>
-    <h1>Winning Prize: {{tournaments.Prize}}</h1>
-    <h1>Category: {{tournaments.Tournament_Type}}</h1>
-    <h1>Start Date: {{tournaments.date_start}}</h1>
-    <h1>End Date: {{tournaments.date_end}}</h1>
-    <h1>Location: {{tournaments.location}}</h1>
-    <h1>Registration Price Per Person: {{tournaments.regPrice}}</h1>
-    <h1>Person Per Team: {{tournaments.PpT}}</h1>
+
+
+
+
+      <div class="d-flex justify-content-center h-100">
+        <div class="user_card" id="tournamentInfo">
+          <div class="d-flex justify-content-center">
+            <h3 id="form-titleInfo">TOURNAMENT INFO</h3>
+          </div>
+
+
+
+            <ul>
+              <li><label for="fname">Tournament:</label> {{tournaments.name}}</li>
+              <li><label for="fname">Winning Prize:</label>{{tournaments.Prize}}</li>
+              <li><label for="fname">Category:</label> {{tournaments.Tournament_Type}}</li>
+              <li><label for="fname">Start Date:</label> {{tournaments.dateStart}}</li>
+              <li><label for="fname">End Date:</label> {{tournaments.dateEnd}}</li>
+              <li><label for="fname">Location:</label> {{tournaments.location}}</li>
+              <li><label for="fname">Registration Price:</label> {{tournaments.regPrice}}</li>
+              <li><label for="fname">Person Per Team:</label> {{tournaments.PpT}}</li>
+            </ul>
+
+            <div class="d-flex justify-content-center mt-3 login_container">
+                <a class="btn login_btn" href="{% url 'tournamentSubmit' tournaments.id %}" role="button">Submit</a>
+            </div>
+
+
+
+        </div>
+      </div>
+
+
 
 
   </body>

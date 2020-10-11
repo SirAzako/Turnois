@@ -30,15 +30,15 @@
   <form class="form-inline" action="" method="GET">
 
     {{ myFiliter.form.PrizeL.errors }}
-    <label for="{{ myFilter.form.PrizeL.id_for_label }}">Prize:</label>
+    <label class="findTournaments" for="{{ myFilter.form.PrizeL.id_for_label }}">Prize:</label>
     {{ myFilter.form.PrizeG }}{{ myFilter.form.PrizeL }}
 
     {{ myFiliter.form.Tournament_Type.errors }}
-      <label for="{{ myFilter.form.Tournament_Type.id_for_label }}">Category: </label>
+      <label class="findTournaments" for="{{ myFilter.form.Tournament_Type.id_for_label }}">Category: </label>
     {{ myFilter.form.Tournament_Type }}
 
     {{ myFiliter.form.PpT.errors }}
-    <label for="{{ myFilter.form.PpT.id_for_label }}">Person Per Team:</label>
+    <label class="findTournaments" for="{{ myFilter.form.PpT.id_for_label }}">Person Per Team:</label>
     {{ myFilter.form.PpT}}
 
     <button type="submit" class="btn btn-primary">Submit</button>

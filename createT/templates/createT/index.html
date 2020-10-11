@@ -1,3 +1,5 @@
+
+
 {% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -20,10 +22,14 @@
         <img src="/static/createT/images/duck.png">
       </div>
 
-
-      <div class="container">
-        
+      {%for message in messages%}
+      <div class="alert alert-{{message.tags}}" role="alert">
+      <p style="text-align:center;">{{message}}</p>
       </div>
+      {% endfor %}
+
+<h1>{{message.tags}}</h1>
+
 
 <!--  <h1>Hello, World!   {{request.user.username}} ---  {{request.user.id}} ----- {{currentUser.id}}</h1>
     <p>URL of this page: {{ request.get_full_path }}</p>
@@ -42,7 +48,9 @@
       <h1>Nothing<h1>
     {%endif%} --!>
 
-
+    <div class="alert alert-dark" role="alert">
+    <p class="text-center">Δημιούργησε το δικό σου τουρνουά κάνοντας εγγραφή σαν διοργανωτής. Μπορείς να κάνεις εγγραφή σαν συμμετέχοντας και να δηλώσεις συμμετοχή στα ενεργά τουρνουά που υπάρχουν.</p>
+    </div>
 
 
   </body>

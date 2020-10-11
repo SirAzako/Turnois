@@ -12,6 +12,7 @@ from .filters import TournamentFilter
 from datetime import date
 import datetime
 # Create your views here.
+
 @login_required(login_url='login')
 def index(request):
 
@@ -30,7 +31,7 @@ def register(request):
         if form.is_valid():
             form.save()
             user = form.cleaned_data.get('username')
-            messages.success(request, 'Account was created for ' + user +"." )
+            messages.danger(request, 'Account was created for ' + user +"." )
             return redirect('login')
 
     context = {'form':form}
@@ -45,6 +46,7 @@ def findTournament(request):
     currentUser = request.user
     userType = currentUser.userType
     if userType == 1:
+        messages.info(request, 'Υou are not authorized to access this page..')
         return redirect('index')
     tournaments = Tournament.objects.filter(dateStart__range=[today, "2080-01-31"])
     myFilter = TournamentFilter(request.GET, queryset=tournaments)
@@ -59,6 +61,7 @@ def createTournament(request):
     currentUser = request.user
     userType = currentUser.userType
     if userType == 0:
+        messages.error(request, 'Υou are not authorized to access this page..')
         return redirect('index')
 
     form = TournamentForm()
@@ -69,7 +72,7 @@ def createTournament(request):
             instance = form.save(commit=False)
             instance.user = request.user
             instance.save()
-
+            messages.success(request, 'Tournament created successfully!!!')
             return redirect('index')
     context = {'form':form, 'currentUser':currentUser}
 
@@ -112,7 +115,7 @@ def tournamentSubmit(request, pk_test):
             instance = form.save(commit=False)
             instance.user = request.user
             instance.save()
-
+            messages.success(request, 'Registration for the tournament was successful!!!')
             return redirect('index')
 
     return render(request, 'createT/tournamentSubmit.html', {'form:':form, 'tournaments':tournaments})

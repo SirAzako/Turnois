@@ -1,22 +1,24 @@
-body {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
-  background: #7abecc !important;
-  font-family: Verdana;
+  background: #adb9bb !important;
+  font-family: verdana;
 }
 
 /*NAVBAR STYLE START*/
-ul {
+.navbarStyle {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #252525;
 }
 
 li {
   float: left;
+    list-style-type: none;
 }
 
 li a {
@@ -27,12 +29,28 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
+li a:hover {
   background-color: #111;
+  color: #603984;
+  text-decoration: none;
+
 }
 
+
+.btn{
+  background-color: #599dad;
+  border: 2px solid black;
+}
+
+.btn:hover{
+  background-color: #3d6e79;
+  border: 2px solid black;
+}
+
+
+
 .active {
-  background-color: #4CAF50;
+  background-color: #adb9bb;
 }
 
 /*NAVBAR STYLE START*/
@@ -45,7 +63,7 @@ img {
 
 /*FORM FILTER STYLE START*/
 .card{
-  background-color: purple;
+  background-color: #603984;
   margin-bottom: 3%
 }
 
@@ -75,7 +93,7 @@ a:hover {
 
 
 input{
-  background-color: #3CBC8D;
+  background-color: #599dad;
   width: 10%;
   margin-left: 4px;
   margin-right: 20px;
@@ -83,8 +101,12 @@ input{
   border: 2px solid black;
   border-radius: 4px;
 }
+
+
+
 select{
-  background-color: #3CBC8D;
+  background-color: #b7212b;
+  color: white;
   margin-left: 4px;
   margin-right: 50px;
   box-sizing: border-box;
@@ -92,6 +114,187 @@ select{
   border-radius: 4px;
 }
 
+
+
+
+
+
 label{
   font-weight: bold;
+}
+
+.alert{
+  margin-top: 5%;
+}
+
+p{
+  font-weight: bold;
+  color: #830fa0;
+}
+
+#btnTournamentSubmit{
+  color: white;
+}
+
+
+
+
+/*forms start*/
+.user_card {
+  width: 400px;
+  height: 285px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #603984;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+
+}
+
+#registerCard{
+  width: 400px;
+  height: 820px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #603984;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+
+}
+
+#createTournamentCard{
+  width: 400px;
+  height: 880px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #603984;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+#tournamentSubmitCard{
+  width: 400px;
+  height: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #603984;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+
+}
+
+#tournamentInfo{
+  width: 400px;
+  height: 450px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #603984;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+
+}
+
+.form_container {
+  margin-top: 20px;
+}
+
+#form-titleInfo{
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+#form-title{
+
+  color: #fff;
+}
+
+.login_btn {
+  width: 100%;
+  background: #599dad !important;
+  color: white !important;
+}
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.login_container {
+  padding: 0 2rem;
+}
+.input-group-text {
+  background: #599dad !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+
+/*forms end*/
+
+
+.fieldWrapper{
+  margin-top: 10%;
+}
+
+.errorlist{
+  list-style-type: none;
+  color: #b7212b;
+  font-weight: bold;
+
+
+}
+
+.ml-2{
+  color: #67b5c7;
+}
+
+.ml-2:hover{
+  text-decoration: none;
+  color: green;
+}
+
+.d-flex{
+  color: white;
+}
+
+.findTournaments{
+  color: white;
 }
